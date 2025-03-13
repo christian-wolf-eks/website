@@ -36,7 +36,7 @@ jobs:
         run: |
           npm install
           npm run build -- \
-            --baseURL "${{ steps.url.outputs.URL }}/pr-preview/pr-${{ github.ref }}"
+            --baseURL "${{ steps.url.outputs.URL }}/pr-preview/pr-${{ github.event.number }}"
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
